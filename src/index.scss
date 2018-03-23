@@ -1,0 +1,7 @@
+@import './data.scss';
+body {
+    background-color:green;
+    div {
+        color: $font-color
+    }
+}

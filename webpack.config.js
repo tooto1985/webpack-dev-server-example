@@ -1,7 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: ['./src/index.js', './src/index.scss'],
+
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -15,5 +16,13 @@ module.exports = {
   ],
   devServer: {
     contentBase: false
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+      }
+    ]
   }
 }
